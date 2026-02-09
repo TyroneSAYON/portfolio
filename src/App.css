@@ -1,0 +1,15 @@
+/* Override App.css */
+.App main {
+  flex: 1;
+  display: block; /* Add this */
+  background-color: white;
+}
+
+.landing {
+  min-height: calc(100vh - 80px);
+  background-color: white;
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
