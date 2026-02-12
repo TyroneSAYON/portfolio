@@ -24,66 +24,92 @@ function Contact() {
   }
 
   return (
-    <section className="page-section" id="contact">
-      <h1 className="page-title">Contact Me</h1>
-      
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Your name"
-          />
-        </div>
+    <>
+      <section className="page-section" id="contact">
+        <h1 className="page-title">Get In Touch</h1>
+        
+        <div className="contact-wrapper">
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="Your Name"
+                className="form-input"
+              />
+            </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="your@email.com"
-          />
-        </div>
+            <div className="form-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="your@email.com"
+                className="form-input"
+              />
+            </div>
 
-        <div className="form-group">
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            placeholder="Your message here..."
-          ></textarea>
-        </div>
+            <div className="form-group">
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                placeholder="Your message..."
+                className="form-input"
+              ></textarea>
+            </div>
 
-        <button type="submit" className="submit-button">Send Message</button>
-      </form>
+            <button type="submit" className="submit-button">Send</button>
+          </form>
 
-      <div className="contact-info">
-        <div className="contact-item">
-          <h4>Email</h4>
-          <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+          <div className="contact-sidebar">
+            <div className="contact-method">
+              <span className="contact-label">Email</span>
+              <a href="mailto:your.email@example.com">your.email@example.com</a>
+            </div>
+            <div className="contact-method">
+              <span className="contact-label">Phone</span>
+              <p>+63 (0) XXX-XXXX</p>
+            </div>
+          </div>
         </div>
-        <div className="contact-item">
-          <h4>LinkedIn</h4>
-          <p><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></p>
+      </section>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-brand">
+            <h3>Ty</h3>
+            <p>Designer & Developer</p>
+          </div>
+          <div className="footer-links">
+            <a href="https://linkedin.com/in/yourprofile" className="footer-icon linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:your.email@gmail.com" className="footer-icon gmail" aria-label="Gmail">
+              <i className="far fa-envelope"></i>
+            </a>
+            <a href="https://github.com/yourprofile" className="footer-icon github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github"></i>
+            </a>
+            <a href="https://behance.net/yourprofile" className="footer-icon behance" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-behance"></i>
+            </a>
+          </div>
+          <div className="footer-credit">
+            <p>&copy; Tyrone Sayon 2026. All rights reserved.</p>
+          </div>
         </div>
-        <div className="contact-item">
-          <h4>GitHub</h4>
-          <p><a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com/yourprofile</a></p>
-        </div>
-      </div>
-    </section>
+      </footer>
+    </>
   )
 }
 
