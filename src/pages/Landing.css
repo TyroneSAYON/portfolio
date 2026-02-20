@@ -6,7 +6,6 @@
 
 .landing {
   min-height: calc(100vh - 80px);
-  background-color: white;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -65,32 +64,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: 0;
   text-decoration: none;
   color: white;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-size: 1.2rem;
 }
 
+.social-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .social-icon:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.linkedin {
-  background-color: #0077b5;
-}
-
-.gmail {
-  background-color: #ea4335;
-}
-
-.github {
-  background-color: #333;
-}
-
-.behance {
-  background-color: #1769ff;
+  box-shadow: 0 4px 12px rgba(44, 95, 141, 0.25);
 }
 
 /* CTA Button */
@@ -109,7 +99,7 @@
 }
 
 .cta-button:hover {
-  background-color: #234a6d;
+  background-color: #1f3f5a;
   transform: translateY(-2px);
 }
 

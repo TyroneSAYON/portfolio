@@ -14,21 +14,21 @@ function Landing() {
           </p>
           
           <div className="social-links">
-            <a href="https://linkedin.com/in/yourprofile" className="social-icon linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-linkedin-in"></i>
+            <a href="https://www.linkedin.com/in/tyrone-sayon/" className="social-icon linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <img src="/linkedin.png" alt="LinkedIn" />
             </a>
-            <a href="mailto:your.email@gmail.com" className="social-icon gmail" aria-label="Gmail">
-              <i className="far fa-envelope"></i>
+            <a href="mailto:tyronesayon917@gmail.com" className="social-icon gmail" aria-label="Gmail">
+              <img src="/gmail.png" alt="Gmail" />
             </a>
-            <a href="https://github.com/yourprofile" className="social-icon github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-github"></i>
+            <a href="https://github.com/TyroneSAYON" className="social-icon github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <img src="/github.png" alt="GitHub" />
             </a>
-            <a href="https://behance.net/yourprofile" className="social-icon behance" aria-label="Behance" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-behance"></i>
+            <a href="https://www.behance.net/tyronesayon" className="social-icon behance" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+              <img src="/behance.png" alt="Behance" />
             </a>
           </div>
 
-          <button className="cta-button" onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>View My Work</button>
+          <a href="https://gsjtquwypixhhfchhdsv.supabase.co/storage/v1/object/public/CV/SAYON,%20RESUME.docx.pdf" className="cta-button" target="_blank" rel="noopener noreferrer">View Resume</a>
         </div>
 
         <div className="hero-image">
