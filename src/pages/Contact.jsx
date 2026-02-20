@@ -1,42 +1,43 @@
-import { useState } from 'react'
+import React, { useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import './Contact.css'
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
+  const form = useRef();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! I will get back to you soon.')
-    setFormData({ name: '', email: '', message: '' })
+    emailjs
+      .sendForm('service_tluohef', 'service_tluohef', form.current, {
+        publicKey: 'KNOMJdabzRuZhBbe3',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alert('Thank you for your message! I will get back to you soon.')
+          form.current.reset();
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alert('Failed to send message. Please try again.')
+        },
+      );
   }
 
   return (
     <>
-      <section className="page-section" id="contact">
-        <h1 className="page-title">Get In Touch</h1>
-        
-        <div className="contact-wrapper">
-          <form className="contact-form" onSubmit={handleSubmit}>
+      <section className="contact-page" id="contact">
+        <div className="contact-content">
+          <h1 className="contact-heading">Get In Touch</h1>
+          <p className="contact-subheading">Send me a message and I'll get back to you soon.</p>
+          
+          <form ref={form} className="contact-form" onSubmit={sendEmail}>
             <div className="form-group">
               <input
                 type="text"
                 id="name"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
                 required
                 placeholder="Your Name"
                 className="form-input"
@@ -48,8 +49,6 @@ function Contact() {
                 type="email"
                 id="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
                 required
                 placeholder="your@email.com"
                 className="form-input"
@@ -60,53 +59,37 @@ function Contact() {
               <textarea
                 id="message"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
                 required
                 placeholder="Your message..."
                 className="form-input"
               ></textarea>
             </div>
 
-            <button type="submit" className="submit-button">Send</button>
+            <button type="submit" className="submit-button">Send Message</button>
           </form>
-
-          <div className="contact-sidebar">
-            <div className="contact-method">
-              <span className="contact-label">Email</span>
-              <a href="mailto:your.email@example.com">your.email@example.com</a>
-            </div>
-            <div className="contact-method">
-              <span className="contact-label">Phone</span>
-              <p>+63 (0) XXX-XXXX</p>
-            </div>
-          </div>
         </div>
       </section>
 
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-brand">
-            <h3>Ty</h3>
-            <p>Designer & Developer</p>
+      <footer className="minimal-footer">
+        <div className="footer-wrapper">
+          <div className="footer-main">
+            <p className="footer-text">Tyrone Sayon</p>
+            <div className="footer-socials">
+              <a href="https://linkedin.com/in/yourprofile" className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:your.email@gmail.com" className="social-icon" aria-label="Gmail">
+                <i className="fas fa-envelope"></i>
+              </a>
+              <a href="https://github.com/yourprofile" className="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-github"></i>
+              </a>
+              <a href="https://behance.net/yourprofile" className="social-icon" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-behance"></i>
+              </a>
+            </div>
           </div>
-          <div className="footer-links">
-            <a href="https://linkedin.com/in/yourprofile" className="footer-icon linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:your.email@gmail.com" className="footer-icon gmail" aria-label="Gmail">
-              <i className="far fa-envelope"></i>
-            </a>
-            <a href="https://github.com/yourprofile" className="footer-icon github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-github"></i>
-            </a>
-            <a href="https://behance.net/yourprofile" className="footer-icon behance" aria-label="Behance" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-behance"></i>
-            </a>
-          </div>
-          <div className="footer-credit">
-            <p>&copy; Tyrone Sayon 2026. All rights reserved.</p>
-          </div>
+          <p className="footer-copyright">All rights reserved © 2026</p>
         </div>
       </footer>
     </>

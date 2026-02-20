@@ -5,6 +5,8 @@ function Stories() {
   const [selectedBlog, setSelectedBlog] = useState(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [selectedProject, setSelectedProject] = useState(null)
+  const [projectModalContent, setProjectModalContent] = useState('')
+  const [projectLoading, setProjectLoading] = useState(false)
 
   const blogs = [
     {
@@ -55,29 +57,61 @@ function Stories() {
     {
       name: 'AtCurbside Stickers',
       image: '/atcurbsidesticker.png',
-      description: 'Custom sticker designs for AtCurbside Cafe Inc.'
+      description: 'Custom sticker designs for AtCurbside Cafe Inc.',
+      contentFile: '/atcurbside.txt'
     },
     {
       name: 'DTI-ICSF Portal',
       image: '/DTI-ICSF.png',
-      description: 'Web-based portal for Internal Customer Satisfaction Feedback'
+      description: 'Web-based portal for Internal Customer Satisfaction Feedback',
+      contentFile: '/ICSF.txt'
     },
     {
       name: 'Stampworth',
       image: '/stampworth.png',
-      description: 'Digital platform for stamp collection management'
+      description: 'Digital platform for stamp collection management',
+      contentFile: '/stampworth.txt'
     },
     {
       name: 'PUP Arta Chatbot',
       image: '/puparta.png',
-      description: 'AI-powered chatbot for PUP Arta information'
+      description: 'AI-powered chatbot for PUP Arta information',
+      contentFile: '/pup.txt'
     },
     {
       name: 'Apeiron Construction',
       image: '/apeiron.png',
-      description: 'Construction company website and portfolio'
+      description: 'Construction company website and portfolio',
+      contentFile: '/apeiron.txt'
     }
   ]
+
+  const openProjectModal = async (project) => {
+    setSelectedProject(project)
+    setProjectLoading(true)
+    setProjectModalContent('')
+    
+    try {
+      const response = await fetch(project.contentFile)
+      if (!response.ok) throw new Error('Failed to load content')
+      const text = await response.text()
+      const paragraphs = text.split('\n\n').filter(p => p.trim())
+      const formattedContent = paragraphs.map((para) => (
+        <p key={Math.random()} className="project-content-paragraph">{para}</p>
+      ))
+      setProjectModalContent(formattedContent)
+    } catch (error) {
+      console.error('Error loading project content:', error)
+      setProjectModalContent(<p className="project-content-paragraph">Error loading content</p>)
+    } finally {
+      setProjectLoading(false)
+    }
+  }
+
+  const closeProjectModal = () => {
+    setSelectedProject(null)
+    setProjectModalContent('')
+  }
 
   return (
     <section className="page-section" id="stories">
@@ -108,22 +142,28 @@ function Stories() {
           </article>
         ))}
       </div>
-
       <div className="projects-section">
-        <h2 className="projects-title">My Projects</h2>
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div 
-              key={index} 
-              className="project-card"
-              onClick={() => setSelectedProject(index)}
-            >
-              <div className="project-image-wrapper">
-                <img src={project.image} alt={project.name} className="project-thumbnail" />
+        <div className="projects-container">
+          <h2 className="projects-title">My Projects</h2>
+          
+          {/* Projects Grid Cards */}
+          <div className="projects-card-grid">
+            {projects.map((project, index) => (
+              <div 
+                key={index} 
+                className="project-card-grid-item"
+                onClick={() => openProjectModal(project)}
+              >
+                <div className="project-card-image-wrapper">
+                  <img src={project.image} alt={project.name} className="project-card-image" />
+                </div>
+                <div className="project-card-content">
+                  <h3 className="project-card-title">{project.name}</h3>
+                  <p className="project-card-description">{project.description}</p>
+                </div>
               </div>
-              <h3 className="project-name">{project.name}</h3>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
@@ -210,20 +250,33 @@ function Stories() {
       )}
 
       {selectedProject !== null && (
-        <div className="project-modal-overlay" onClick={() => setSelectedProject(null)}>
-          <div className="project-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="project-close-btn" onClick={() => setSelectedProject(null)}>×</button>
-            <div className="project-modal-content">
-              <div className="project-image-container">
-                <img 
-                  src={projects[selectedProject].image} 
-                  alt={projects[selectedProject].name}
-                  className="project-modal-image"
-                />
+        <div className="project-modal-overlay" onClick={closeProjectModal}>
+          <div className="project-modal-split" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={closeProjectModal}>×</button>
+            
+            {/* Left Half */}
+            <div className="project-modal-left">
+              <div className="project-modal-body">
+                <h1 className="project-modal-title">{selectedProject.name}</h1>
+                <p className="project-modal-description">{selectedProject.description}</p>
+                
+                {projectLoading ? (
+                  <div className="project-loading">Loading...</div>
+                ) : (
+                  <div className="project-modal-text">
+                    {projectModalContent}
+                  </div>
+                )}
               </div>
-              <div className="project-details">
-                <h2 className="project-modal-title">{projects[selectedProject].name}</h2>
-                <p className="project-modal-description">{projects[selectedProject].description}</p>
+            </div>
+            
+            {/* Divider */}
+            <div className="project-modal-divider"></div>
+            
+            {/* Right Half */}
+            <div className="project-modal-right">
+              <div className="project-modal-image-container">
+                <img src={selectedProject.image} alt={selectedProject.name} className="project-modal-image" />
               </div>
             </div>
           </div>
