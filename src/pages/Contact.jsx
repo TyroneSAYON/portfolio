@@ -9,7 +9,7 @@ function Contact() {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_tluohef', 'service_tluohef', form.current, {
+      .sendForm('service_v2kdhu8', 'template_atn67e8', form.current, {
         publicKey: 'KNOMJdabzRuZhBbe3',
       })
       .then(
