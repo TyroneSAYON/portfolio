@@ -7,6 +7,11 @@ function Stories() {
   const [selectedProject, setSelectedProject] = useState(null)
   const [projectModalContent, setProjectModalContent] = useState('')
   const [projectLoading, setProjectLoading] = useState(false)
+  const [imageZoomLevel, setImageZoomLevel] = useState(1)
+  const [imagePanX, setImagePanX] = useState(0)
+  const [imagePanY, setImagePanY] = useState(0)
+  const [isDragging, setIsDragging] = useState(false)
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
 
   const blogs = [
     {
@@ -111,6 +116,58 @@ function Stories() {
   const closeProjectModal = () => {
     setSelectedProject(null)
     setProjectModalContent('')
+    setImageZoomLevel(1)
+    setImagePanX(0)
+    setImagePanY(0)
+    setIsDragging(false)
+  }
+
+  const handleImageMouseWheel = (e) => {
+    if (!isDragging) {
+      e.preventDefault()
+      const delta = e.deltaY > 0 ? -0.2 : 0.2
+      const newZoom = Math.max(1, Math.min(3, imageZoomLevel + delta))
+      setImageZoomLevel(newZoom)
+    }
+  }
+
+  const handleImageMouseDown = (e) => {
+    if (imageZoomLevel > 1) {
+      setIsDragging(true)
+      setDragStart({ x: e.clientX - imagePanX, y: e.clientY - imagePanY })
+    }
+  }
+
+  const handleImageMouseMove = (e) => {
+    if (isDragging && imageZoomLevel > 1) {
+      setImagePanX(e.clientX - dragStart.x)
+      setImagePanY(e.clientY - dragStart.y)
+    }
+  }
+
+  const handleImageMouseUp = () => {
+    setIsDragging(false)
+  }
+
+  const handleZoomIn = () => {
+    setImageZoomLevel(prev => Math.min(3, prev + 0.5))
+  }
+
+  const handleZoomOut = () => {
+    const newZoom = imageZoomLevel - 0.5
+    if (newZoom <= 1) {
+      setImageZoomLevel(1)
+      setImagePanX(0)
+      setImagePanY(0)
+    } else {
+      setImageZoomLevel(newZoom)
+    }
+  }
+
+  const handleResetZoom = () => {
+    setImageZoomLevel(1)
+    setImagePanX(0)
+    setImagePanY(0)
   }
 
   return (
@@ -275,8 +332,53 @@ function Stories() {
             
             {/* Right Half */}
             <div className="project-modal-right">
-              <div className="project-modal-image-container">
-                <img src={selectedProject.image} alt={selectedProject.name} className="project-modal-image" />
+              <div 
+                className="project-modal-image-container"
+                onWheel={handleImageMouseWheel}
+                onMouseDown={handleImageMouseDown}
+                onMouseMove={handleImageMouseMove}
+                onMouseUp={handleImageMouseUp}
+                onMouseLeave={handleImageMouseUp}
+              >
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.name} 
+                  className="project-modal-image"
+                  style={{
+                    transform: `translate(${imagePanX}px, ${imagePanY}px) scale(${imageZoomLevel})`,
+                    cursor: imageZoomLevel > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in'
+                  }}
+                />
+                <div className="zoom-controls">
+                  <button 
+                    className="zoom-btn" 
+                    onClick={handleZoomIn}
+                    title="Zoom in"
+                  >
+                    +
+                  </button>
+                  <button 
+                    className="zoom-btn" 
+                    onClick={handleZoomOut}
+                    title="Zoom out"
+                    style={{ opacity: imageZoomLevel > 1 ? 1 : 0.5, pointerEvents: imageZoomLevel > 1 ? 'auto' : 'none' }}
+                  >
+                    −
+                  </button>
+                  {imageZoomLevel > 1 && (
+                    <button 
+                      className="zoom-btn" 
+                      onClick={handleResetZoom}
+                      title="Reset zoom"
+                    >
+                      ✓
+                    </button>
+                  )}
+                </div>
+                <div className="zoom-info">
+                  {imageZoomLevel > 1 && <span>Drag to pan • Scroll to zoom</span>}
+                  {imageZoomLevel <= 1 && <span>Scroll to zoom</span>}
+                </div>
               </div>
             </div>
           </div>

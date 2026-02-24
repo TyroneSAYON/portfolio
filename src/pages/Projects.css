@@ -1,7 +1,8 @@
 .projects-section {
   background-color: #ffffff;
-  padding: 5rem 2rem;
+  padding: 5rem 3rem;
   min-height: 30vh;
+  width: 100%;
 }
 
 .projects-container {
@@ -400,7 +401,7 @@
   }
 
   .projects-title {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
 
   .featured-project {
@@ -422,130 +423,7 @@
   }
 
   .projects-gallery {
-    gap: 2rem;
-  }
-
-  .project-item {
-    flex: 0 0 250px;
-    min-width: 250px;
-  }
-
-  .project-image-wrapper {
-    height: 190px;
-  }
-}
-
-@media (max-width: 768px) {
-  .projects-section {
-    padding: 3rem 1.5rem;
-  }
-
-  .projects-header {
-    margin-bottom: 3rem;
-  }
-
-  .projects-title {
-    font-size: 2rem;
-  }
-
-  .projects-subtitle {
-    font-size: 1rem;
-  }
-
-  .featured-project {
-    margin-bottom: 4rem;
-  }
-
-  .featured-image-wrapper {
-    height: 300px;
-  }
-
-  .featured-title {
-    font-size: 1.6rem;
-  }
-
-  .featured-description {
-    font-size: 0.95rem;
-  }
-
-  .projects-gallery {
     gap: 1.5rem;
-    margin-top: 3rem;
-  }
-
-  .project-item {
-    flex: 0 0 220px;
-    min-width: 220px;
-  }
-
-  .project-image-wrapper {
-    height: 170px;
-    margin-bottom: 0.75rem;
-  }
-
-  .project-title {
-    font-size: 0.9rem;
-  }
-
-  .project-description {
-    font-size: 0.75rem;
-  }
-
-  .project-modal-content {
-    padding: 2rem;
-    max-width: 90%;
-  }
-
-  .modal-title {
-    font-size: 1.8rem;
-  }
-
-  .modal-text {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .projects-section {
-    padding: 2rem 1rem;
-  }
-
-  .projects-title {
-    font-size: 1.8rem;
-  }
-
-  .projects-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .featured-image-wrapper {
-    height: 250px;
-  }
-
-  .featured-title {
-    font-size: 1.4rem;
-  }
-
-  .featured-description {
-    font-size: 0.9rem;
-  }
-
-  .featured-details {
-    gap: 1rem;
-  }
-
-  .featured-overlay {
-    padding: 1.5rem;
-  }
-
-  .featured-category {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.75rem;
-  }
-
-  .projects-gallery {
-    gap: 1rem;
-    padding-bottom: 0.5rem;
   }
 
   .project-item {
@@ -555,6 +433,68 @@
 
   .project-image-wrapper {
     height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .projects-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .projects-title {
+    font-size: 1.8rem;
+  }
+
+  .projects-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .featured-project {
+    margin-bottom: 3rem;
+    gap: 1.5rem;
+  }
+
+  .featured-image-wrapper {
+    height: 300px;
+  }
+
+  .featured-title {
+    font-size: 1.5rem;
+  }
+
+  .featured-description {
+    font-size: 0.9rem;
+  }
+
+  .featured-details {
+    gap: 1.25rem;
+  }
+
+  .featured-overlay {
+    padding: 1.5rem;
+  }
+
+  .featured-category {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .projects-gallery {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .project-item {
+    flex: 0 0 200px;
+    min-width: 200px;
+  }
+
+  .project-image-wrapper {
+    height: 150px;
     margin-bottom: 0.6rem;
   }
 
@@ -566,8 +506,134 @@
     font-size: 0.7rem;
   }
 
+  .project-modal-content {
+    padding: 1.5rem;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 100%;
+  }
+
+  .modal-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .modal-category {
+    align-self: flex-start;
+    font-size: 0.8rem;
+  }
+
+  .project-modal-explanation {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    line-height: 1.5;
+  }
+
+  .modal-body {
+    margin-bottom: 1.25rem;
+    min-height: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .modal-text {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .modal-text p {
+    margin: 0.6rem 0;
+    font-size: 0.78rem;
+  }
+
+  .modal-technologies {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .modal-tech-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .modal-tech-list {
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .modal-tech-tag {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.65rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .projects-title {
+    font-size: 1.5rem;
+  }
+
+  .projects-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .featured-image-wrapper {
+    height: 250px;
+  }
+
+  .featured-title {
+    font-size: 1.3rem;
+  }
+
+  .featured-description {
+    font-size: 0.85rem;
+  }
+
+  .featured-overlay {
+    padding: 1.25rem;
+  }
+
+  .featured-category {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .projects-gallery {
+    gap: 0.8rem;
+  }
+
+  .project-item {
+    flex: 0 0 180px;
+    min-width: 180px;
+  }
+
+  .project-image-wrapper {
+    height: 135px;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-title {
+    font-size: 0.8rem;
+  }
+
+  .project-description {
+    font-size: 0.65rem;
+  }
+
   .project-overlay {
-    padding: 0.8rem;
+    padding: 0.75rem;
   }
 
   .project-category {
@@ -575,36 +641,226 @@
     font-size: 0.65rem;
   }
 
-  .project-modal-overlay {
-    padding: 1rem;
+  .tech-tag {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.7rem;
   }
 
   .project-modal-content {
-    padding: 1.5rem;
-    max-height: 85vh;
-  }
-
-  .modal-close-btn {
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
+    padding: 1.25rem;
+    max-width: 100%;
+    max-height: 90vh;
+    width: 100%;
   }
 
   .modal-header {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.6rem;
+    margin-bottom: 0.9rem;
   }
 
   .modal-title {
-    font-size: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .modal-category {
+    align-self: flex-start;
+    font-size: 0.75rem;
+  }
+
+  .project-modal-explanation {
+    font-size: 0.75rem;
+    margin-bottom: 0.9rem;
+    padding: 0.4rem 0;
+    line-height: 1.4;
+  }
+
+  .modal-body {
+    margin-bottom: 0.9rem;
+    min-height: auto;
+    max-height: none;
+    overflow-y: visible;
   }
 
   .modal-text {
-    font-size: 0.9rem;
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+
+  .modal-text p {
+    margin: 0.4rem 0;
+    font-size: 0.72rem;
+  }
+
+  .modal-technologies {
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .modal-tech-title {
+    font-size: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .modal-tech-list {
+    gap: 0.35rem;
+    flex-wrap: wrap;
   }
 
   .modal-tech-tag {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .projects-title {
+    font-size: 1.3rem;
+  }
+
+  .projects-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .featured-image-wrapper {
+    height: 200px;
+  }
+
+  .featured-title {
+    font-size: 1.1rem;
+  }
+
+  .featured-description {
     font-size: 0.8rem;
-    padding: 0.4rem 1rem;
+  }
+
+  .featured-details {
+    gap: 1rem;
+  }
+
+  .featured-overlay {
+    padding: 1rem;
+  }
+
+  .featured-category {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.7rem;
+  }
+
+  .projects-gallery {
+    gap: 0.75rem;
+  }
+
+  .project-item {
+    flex: 0 0 160px;
+    min-width: 160px;
+  }
+
+  .project-image-wrapper {
+    height: 120px;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-title {
+    font-size: 0.75rem;
+  }
+
+  .project-description {
+    font-size: 0.6rem;
+  }
+
+  .project-overlay {
+    padding: 0.75rem;
+  }
+
+  .project-category {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  .project-modal-overlay {
+    padding: 0.75rem;
+  }
+
+  .project-modal-content {
+    padding: 1rem;
+    max-width: 100%;
+    max-height: 85vh;
+    width: 100%;
+  }
+
+  .modal-close-btn {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.3rem;
+    width: 35px;
+    height: 35px;
+  }
+
+  .modal-header {
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .modal-title {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .modal-category {
+    align-self: flex-start;
+    font-size: 0.7rem;
+  }
+
+  .project-modal-explanation {
+    font-size: 0.68rem;
+    margin-bottom: 0.7rem;
+    padding: 0.3rem 0;
+    line-height: 1.3;
+  }
+
+  .modal-body {
+    margin-bottom: 0.7rem;
+    min-height: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .modal-text {
+    font-size: 0.62rem;
+    line-height: 1.3;
+  }
+
+  .modal-text p {
+    margin: 0.3rem 0;
+    font-size: 0.62rem;
+  }
+
+  .modal-technologies {
+    margin-top: 0.7rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .modal-tech-title {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-tech-list {
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .modal-tech-tag {
+    font-size: 0.58rem;
+    padding: 0.25rem 0.5rem;
   }
 }

@@ -12,16 +12,45 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffff;
   color: #e0e0e0;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
 }
 
 #root {
   min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   min-height: calc(100vh - 80px);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  main {
+    min-height: calc(100vh - 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  main {
+    min-height: auto;
+  }
 }

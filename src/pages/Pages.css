@@ -2,6 +2,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 4rem 2rem;
+  width: 100%;
 }
 
 .page-title {
@@ -296,14 +297,173 @@
   color: #646cff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .page-section {
+    padding: 3.5rem 2rem;
+  }
+
   .page-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .page-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+    margin-top: 0.75rem;
+  }
+
+  .skills-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+
+  .skill-item img {
+    max-width: 120px;
+    height: 120px;
+  }
+
+  .skill-item p {
+    font-size: 0.95rem;
+    min-height: 1.8rem;
+  }
+
+  .skill-grid,
+  .tech-grid,
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-stack-title {
+    font-size: 1.5rem;
+  }
+
+  .tech-category-title {
+    font-size: 1.1rem;
+  }
+
+  .tech-icon-wrapper img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  .tech-item span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .skills-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.75rem;
+  }
+
+  .skill-item img {
+    max-width: 100px;
+    height: 100px;
+  }
+
+  .skill-item p {
+    font-size: 0.9rem;
+    min-height: 1.6rem;
   }
 
   .skill-grid,
   .tech-grid,
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .tech-stack-title {
+    font-size: 1.3rem;
+  }
+
+  .tech-category-title {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-icon-wrapper {
+    height: 50px;
+  }
+
+  .tech-icon-wrapper img {
+    max-width: 45px;
+    max-height: 45px;
+  }
+
+  .tech-item span {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-section {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .page-title {
+    font-size: 1.3rem;
+  }
+
+  .skills-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 0.5rem;
+  }
+
+  .skill-item img {
+    max-width: 80px;
+    height: 80px;
+  }
+
+  .skill-item p {
+    font-size: 0.8rem;
+    min-height: 1.4rem;
+  }
+
+  .skill-grid,
+  .tech-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-stack-title {
+    font-size: 1.1rem;
+  }
+
+  .tech-category-title {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .tech-icon-wrapper {
+    font-size: 1.5rem;
+    height: 45px;
+  }
+
+  .tech-icon-wrapper img {
+    max-width: 40px;
+    max-height: 40px;
+  }
+
+  .tech-item span {
+    font-size: 0.7rem;
   }
 }
