@@ -76,16 +76,16 @@ function Contact() {
             <p className="footer-text">Tyrone Sayon</p>
             <div className="footer-socials">
               <a href="https://linkedin.com/in/yourprofile" className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <img src="/linkedin.png" alt="LinkedIn" />
+                <img src="/iconlogo/linkedin.png" alt="LinkedIn" />
               </a>
               <a href="mailto:your.email@gmail.com" className="social-icon" aria-label="Gmail">
-                <img src="/gmail.png" alt="Gmail" />
+                <img src="/iconlogo/gmail.png" alt="Gmail" />
               </a>
               <a href="https://github.com/yourprofile" className="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-                <img src="/github.png" alt="GitHub" />
+                <img src="/iconlogo/github.png" alt="GitHub" />
               </a>
               <a href="https://behance.net/yourprofile" className="social-icon" aria-label="Behance" target="_blank" rel="noopener noreferrer">
-                <img src="/behance.png" alt="Behance" />
+                <img src="/iconlogo/behance.png" alt="Behance" />
               </a>
             </div>
           </div>

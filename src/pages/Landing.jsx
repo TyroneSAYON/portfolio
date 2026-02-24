@@ -15,16 +15,16 @@ function Landing() {
           
           <div className="social-links">
             <a href="https://www.linkedin.com/in/tyrone-sayon/" className="social-icon linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <img src="/linkedin.png" alt="LinkedIn" />
+              <img src="/iconlogo/linkedin.png" alt="LinkedIn" />
             </a>
             <a href="mailto:tyronesayon917@gmail.com" className="social-icon gmail" aria-label="Gmail">
-              <img src="/gmail.png" alt="Gmail" />
+              <img src="/iconlogo/gmail.png" alt="Gmail" />
             </a>
             <a href="https://github.com/TyroneSAYON" className="social-icon github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-              <img src="/github.png" alt="GitHub" />
+              <img src="/iconlogo/github.png" alt="GitHub" />
             </a>
             <a href="https://www.behance.net/tyronesayon" className="social-icon behance" aria-label="Behance" target="_blank" rel="noopener noreferrer">
-              <img src="/behance.png" alt="Behance" />
+              <img src="/iconlogo/behance.png" alt="Behance" />
             </a>
           </div>
 
