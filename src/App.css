@@ -3,6 +3,8 @@
   flex: 1;
   display: block; /* Add this */
   background-color: white;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .landing {
@@ -12,4 +14,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .landing {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing {
+    padding: 1rem 1.5rem;
+    min-height: calc(100vh - 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .landing {
+    padding: 0.75rem 1rem;
+    min-height: auto;
+  }
 }

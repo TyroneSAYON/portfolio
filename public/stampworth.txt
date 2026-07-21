@@ -1,0 +1,11 @@
+Stampworth is a digital loyalty platform designed to modernize traditional stamp card systems by providing a practical and scalable solution for Small and Medium-sized Enterprises (SMEs). The project addresses common problems found in physical loyalty programs — such as lost cards, limited customer engagement, and limited use of customer data — by transforming the entire experience into a mobile-first ecosystem.
+
+Currently under development as our final capstone project, Stampworth aims to create a complete digital loyalty solution that benefits both customers and business owners through two integrated mobile applications.
+
+The Stampworth app allows customers to discover participating stores, monitor their points and rewards, and generate a unique QR code for seamless check-ins. Instead of collecting physical stamps, users receive digital stamps through quick QR scanning, making the loyalty experience more convenient and accessible.
+
+On the business side, the Stampworth Business app serves as a management dashboard where merchants can create customized rewards, track redemption activity, and view real-time customer engagement data. This helps store owners better understand customer behavior while simplifying loyalty program management.
+
+To go beyond simply digitizing traditional stamp cards, Stampworth integrates geofencing technology that enables proactive customer engagement. When users enter a predefined area near a participating store, the app can send personalized notifications such as welcome messages, reward reminders, or limited-time offers directly to their smartphones. This transforms the loyalty program into an active marketing channel that connects with customers at the right place and time.
+
+By combining QR-code transactions with location-based engagement, Stampworth aims to help SMEs strengthen customer relationships, improve retention, and encourage repeat visits — ultimately turning occasional buyers into loyal customers in today’s increasingly digital marketplace.

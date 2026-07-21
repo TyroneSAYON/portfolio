@@ -1,0 +1,7 @@
+The DTI Region XI Internal Customer Satisfaction Feedback (ICSF) Portal is a centralized web-based system developed to modernize how internal customer satisfaction data is collected, analyzed, and reported across different offices and divisions of the Department of Trade and Industry (DTI).
+
+Before the system was introduced, feedback data was handled through manual spreadsheets and separate reporting files, which often caused delays, inconsistent data consolidation, and challenges in creating standardized reports for management and compliance reviews. The project aimed to transform this process into a more efficient and reliable digital workflow.
+
+The portal allows users to upload feedback data, automatically generate analytics dashboards, and export management- and COA-ready reports in Excel format. Designed with usability and accuracy in mind, the system improves transparency and ensures consistent evaluation of service performance across participating offices.
+
+By supporting monthly, quarterly, and semestral analysis, the ICSF Portal enables data-driven decision-making while helping strengthen accountability and continuous service quality improvement within DTI Region XI.

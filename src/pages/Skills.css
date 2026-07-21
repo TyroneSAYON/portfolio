@@ -3,13 +3,14 @@
   margin: 0 auto;
   padding: 4rem 2rem;
   background-color: white;
+  width: 100%;
 }
 
 .page-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   margin-top: 1rem;
-  color: #2c5282;
+  color: #2c5f8d;
   text-align: left;
   font-weight: 700;
 }
@@ -20,10 +21,9 @@
   font-size: 0.95rem;
   line-height: 1.6;
   margin-top: 3rem;
-  max-width: 100%;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  white-space: nowrap;
 }
 
 .skills-gallery {
@@ -65,23 +65,7 @@
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .page-title {
-    font-size: 1.5rem;
-  }
-
-  .skills-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-gallery {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* Tech Stack Base Styles */
 .tech-stack-section {
   margin-top: 4rem;
   padding-top: 3rem;
@@ -158,24 +142,216 @@
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .tech-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+@media (max-width: 1200px) {
+  .page-section {
+    padding: 3.5rem 2rem;
   }
 
-  .tech-category-title {
-    font-size: 1rem;
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .skills-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 1.5rem;
+  }
+
+  .skill-item img {
+    max-width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .skills-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+    margin-top: 0.75rem;
+  }
+
+  .skills-caption {
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+
+  .skills-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+
+  .skill-item img {
+    max-width: 120px;
+    height: 120px;
+  }
+
+  .skill-item p {
+    font-size: 0.95rem;
+    min-height: 1.8rem;
+  }
+
+  .tech-stack-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
   }
 
   .tech-stack-title {
     font-size: 1.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .tech-stack-caption {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .tech-category {
+    margin-bottom: 2.5rem;
+  }
+
+  .tech-category-title {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .skills-caption {
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+  }
+
+  .skills-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.75rem;
+  }
+
+  .skill-item img {
+    max-width: 100px;
+    height: 100px;
+  }
+
+  .skill-item p {
+    font-size: 0.9rem;
+    min-height: 1.6rem;
+  }
+
+  .tech-stack-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .tech-stack-title {
+    font-size: 1.3rem;
+  }
+
+  .tech-stack-caption {
+    font-size: 0.85rem;
+    margin-top: 1.25rem;
+  }
+
+  .tech-category {
+    margin-bottom: 2rem;
+  }
+
+  .tech-category-title {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
 
 @media (max-width: 480px) {
+  .page-section {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .page-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .skills-caption {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .skills-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 0.5rem;
+  }
+
+  .skill-item {
+    min-height: 100px;
+  }
+
+  .skill-item img {
+    max-width: 80px;
+    height: 80px;
+  }
+
+  .skill-item p {
+    font-size: 0.8rem;
+    min-height: 1.4rem;
+  }
+
+  .tech-stack-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .tech-stack-title {
+    font-size: 1.1rem;
+  }
+
+  .tech-stack-caption {
+    font-size: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .tech-category {
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-category-title {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
   .tech-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 }
