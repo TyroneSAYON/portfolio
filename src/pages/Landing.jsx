@@ -28,7 +28,7 @@ function Landing() {
             </a>
           </div>
 
-          <a href="https://gsjtquwypixhhfchhdsv.supabase.co/storage/v1/object/public/CV/resume-sayon.pdf" className="cta-button" target="_blank" rel="noopener noreferrer">View Resume</a>
+          <a href="https://drive.google.com/file/d/1Yoel_-Ohi8i40QHTm0YZ1eL2yTfXHTuu/view" className="cta-button" target="_blank" rel="noopener noreferrer">View Resume</a>
         </div>
 
         <div className="hero-image">
