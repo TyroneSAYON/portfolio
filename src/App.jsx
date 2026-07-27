@@ -1,6 +1,7 @@
 import Navigation from './components/Navigation'
 import Landing from './pages/Landing'
 import Skills from './pages/Skills'
+import Projects from './pages/Projects'
 import Stories from './pages/Stories'
 import Contact from './pages/Contact'
 import './App.css'
@@ -12,6 +13,7 @@ function App() {
       <main>
         <Landing />
         <Skills />
+        <Projects />
         <Stories />
         <Contact />
       </main>

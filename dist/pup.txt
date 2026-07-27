@@ -1,0 +1,9 @@
+The PUP ARTA Chatbot project focuses on the design and development of an interactive and informative kiosk system aimed at improving awareness and accessibility of the Polytechnic University of the Philippines (PUP) Citizen’s Charter. The system transforms traditional service documents into an interactive digital experience, allowing users to easily explore procedures, requirements, and available services aligned with Anti-Red Tape Authority (ARTA) standards.
+
+The project involves developing a touchscreen-friendly web application that serves as the main kiosk interface, supported by a Content Management System (CMS) that allows administrators to update information and services without requiring technical redevelopment. The platform is designed to provide clear navigation and structured information, ensuring users can quickly find the services they need.
+
+A key feature of the system is the integration of an AI-powered chatbot, which assists users by answering common questions, guiding them through processes, and providing real-time assistance based on Citizen’s Charter information. The chatbot enhances accessibility by making government service information more conversational and easier to understand.
+
+Designed for flexibility, the kiosk supports both landscape and portrait screen orientations and is built using a flexible technology stack to ensure compatibility with the PUP server environment. The overall design and information structure are primarily based on the ARTEMIS Citizen Charter system to maintain consistency with official institutional standards.
+
+Through this project, the PUP ARTA Chatbot aims to improve service transparency, reduce inquiry time, and create a more modern, user-friendly way for students and visitors to access essential university services.

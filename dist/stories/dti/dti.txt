@@ -1,0 +1,11 @@
+My internship at the Department of Trade and Industry (DTI) Region XI was both challenging and fulfilling. It pushed me beyond student life and introduced me to real professional responsibilities. As an Information Technology intern, I gained not only technical skills but also lessons in discipline, adaptability, and growth.
+
+Adjusting to an 8:00 AM–5:00 PM work schedule was one of my first challenges. Balancing academic requirements with daily office tasks required strong time management and commitment. Over time, I learned how to prioritize responsibilities, manage my energy, and maintain focus throughout the workday.
+
+Assigned to the Management Support Services Unit (MSSU), I handled Internal Customer Satisfaction Feedback (ICSF) records and data consolidation. Although repetitive at first, these tasks taught me the importance of accuracy and accountability, showing how even small responsibilities contribute to meaningful organizational decisions.
+
+One of the most rewarding experiences was contributing to the design and development of the ICSF web-based portal. As a UI/UX designer, seeing my ideas become part of a functional system was fulfilling. Feedback and revisions challenged me, but they also helped me become more adaptable and open to continuous improvement.
+
+I also encountered technical challenges during backend deployment and NAS server configuration. Troubleshooting errors tested my patience and perseverance, but overcoming them boosted my confidence and reinforced the value of persistence.
+
+Overall, my internship at DTI Region XI was more than a requirement—it was a period of personal and professional growth. It strengthened my interest in system development and IT infrastructure while preparing me for future challenges in the industry.

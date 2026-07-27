@@ -1,0 +1,7 @@
+The Apeiron Construction Project Monitoring System: Progress Billing Module was developed to help Apeiron Construction Company improve how project progress is tracked and how billing processes are managed throughout long-term construction projects. This system was assigned to our team as a final project during our second year in college for the Software Engineering subject, where we applied software development principles to solve real-world business challenges.
+
+The module focuses on creating a more reliable and structured approach to monitoring completed work while simplifying financial management and revenue tracking. Instead of relying on traditional revenue recognition methods that may lead to inconsistencies, the system applies progress billing principles, ensuring revenue is recorded only after completed work is reviewed and approved by the contractee.
+
+By linking billing directly to verified project milestones, the system provides a clearer and more accurate representation of both project performance and financial status. The solution was designed around the company’s workflow, incorporating customized approval processes, progress monitoring features, and structured billing management tailored to Apeiron Construction Company’s operational needs.
+
+Overall, the system enhances project efficiency by improving transparency, strengthening communication between stakeholders, and providing managers with better visibility into project progress and financial performance.

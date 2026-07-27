@@ -1,191 +1,196 @@
+import { useEffect, useState } from 'react'
 import './Projects.css'
-import { useState, useEffect } from 'react'
+
+const projects = [
+  {
+    title: 'AtCurbside',
+    description: 'A polished brand-forward experience that highlights the café’s identity through immersive visuals, storytelling, and a modern layout.',
+    technologies: ['Photoshop', 'Illustrator', 'Canva'],
+    image: '/exp/curb2.png',
+    liveDemo: null,
+    github: null
+  },
+  {
+    title: 'AtCurbside Stickers',
+    description: 'A playful product showcase spotlighting sticker art, campaign visuals, and the creative details behind the brand.',
+    technologies: ['React', 'CSS', 'Illustration'],
+    image: '/exp/curb1.png',
+    liveDemo: null,
+    github: null
+  },
+  {
+    title: 'DTI-ICSF Portal',
+    description: 'A functional portal concept centered on clarity, structure, and polished user flows for internal feedback systems.',
+    technologies: ['React-Django', 'Python', 'Figma'],
+    image: '/exp/icsf.png',
+    liveDemo: null,
+    github: null
+  },
+  {
+    title: 'PUP Arta Chatbot',
+    description: 'A conversational interface concept designed to help users explore campus information with a friendly, approachable experience.',
+    technologies: ['Figma', 'React', 'shadcn'],
+    image: '/exp/arta.png',
+    liveDemo: null,
+    github: null
+  },
+  {
+    title: 'Apeiron Construction',
+    description: 'A modern corporate website concept built to present projects, services, and company identity with confidence and elegance.',
+    technologies: ['React', 'shadcn', 'Tailwind CSS'],
+    image: '/exp/apeiron.png',
+    liveDemo: null,
+    github: null
+  },
+  {
+    title: 'Stampworth',
+    description: 'A clean digital platform concept for organizing and presenting collectible information in a refined, accessible way.',
+    technologies: ['React', 'UX Writing', 'Responsive UI'],
+    image: '/exp/stampworth.png',
+    liveDemo: null,
+    github: null
+  }
+]
 
 function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null)
-  const [modalContent, setModalContent] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+  const [touchStartX, setTouchStartX] = useState(null)
+  const [selectedImage, setSelectedImage] = useState(null)
 
-  const projects = [
-    {
-      id: 1,
-      title: 'AtCurbside Stickers',
-      image: '/atcurbsidesticker.png',
-      description: 'Creative sticker designs for AtCurbside Coffee Roastery, bringing brand personality to life through practical and visually appealing packaging designs.',
-      category: 'Branding & Design',
-      technologies: ['Canva', 'Illustrator', 'Photoshop'],
-      featured: true,
-      contentFile: '/atcurbside.txt'
-    },
-    {
-      id: 2,
-      title: 'Apeiron Construction Services',
-      image: '/apeiron.png',
-      description: 'Construction monitoring system with progress billing module for tracking project completion and financial management.',
-      category: 'Web Development',
-      technologies: ['Figma', 'shadcn/ui', 'React', 'Vite'],
-      featured: false,
-      contentFile: '/apeiron.txt'
-    },
-    {
-      id: 3,
-      title: 'DTI-ICSF Portal',
-      image: '/DTI-ICSF.png',
-      description: 'Centralized portal for collecting and analyzing customer satisfaction feedback with automated analytics and reporting.',
-      category: 'Full Stack Development',
-      technologies: ['React', 'Django', 'Python', 'NAS', 'Figma'],
-      featured: false,
-      contentFile: '/ICSF.txt'
-    },
-    {
-      id: 4,
-      title: 'PUP Arta-Chatbot',
-      image: '/puparta.png',
-      description: 'Interactive AI chatbot kiosk for university services, providing easy access to Citizen\'s Charter information.',
-      category: 'AI & Web Development',
-      technologies: ['React', 'shadcn/ui', 'Gemini AI', 'Figma'],
-      featured: false,
-      contentFile: '/pup.txt'
-    },
-    {
-      id: 5,
-      title: 'Stampworth',
-      image: '/stampworth.png',
-      description: 'Digital loyalty platform with QR-code transactions and geofencing for modern customer engagement.',
-      category: 'Mobile Development',
-      technologies: ['Figma', 'React Native', 'React', 'Node.js'],
-      featured: false,
-      contentFile: '/stampworth.txt'
+  useEffect(() => {
+    if (isPaused) {
+      return undefined
     }
-  ]
 
-  const openModal = async (project) => {
-    setSelectedProject(project)
-    setModalContent('')
-    setLoading(true)
-    
-    try {
-      const response = await fetch(project.contentFile)
-      if (!response.ok) throw new Error('Failed to load content')
-      const text = await response.text()
-      setModalContent(text)
-    } catch (error) {
-      console.error('Error:', error)
-      setModalContent('Unable to load project details.')
-    } finally {
-      setLoading(false)
-    }
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % projects.length)
+    }, 5000)
+
+    return () => window.clearInterval(timer)
+  }, [isPaused])
+
+  const goToPrev = () => {
+    setActiveIndex((current) => (current === 0 ? projects.length - 1 : current - 1))
   }
 
-  const closeModal = () => {
-    setSelectedProject(null)
-    setModalContent('')
+  const goToNext = () => {
+    setActiveIndex((current) => (current + 1) % projects.length)
   }
 
-  const featuredProject = projects.find(p => p.featured)
-  const otherProjects = projects.filter(p => !p.featured)
+  const handleTouchStart = (event) => {
+    setTouchStartX(event.touches[0].clientX)
+  }
+
+  const handleTouchEnd = (event) => {
+    if (touchStartX === null) {
+      return
+    }
+
+    const delta = event.changedTouches[0].clientX - touchStartX
+
+    if (delta > 50) {
+      goToPrev()
+    } else if (delta < -50) {
+      goToNext()
+    }
+
+    setTouchStartX(null)
+  }
 
   return (
-    <section className="projects-section">
-      <div className="projects-container">
+    <section className="projects-section" id="projects" aria-label="Projects showcase">
+      <div className="projects-shell">
         <div className="projects-header">
-          <h1 className="projects-title">Selected Work</h1>
-          <p className="projects-subtitle">A collection of my recent projects and design work</p>
+          <p className="projects-eyebrow">Selected work</p>
+          <h2 className="projects-title">Projects that blend design, storytelling, and thoughtful interaction.</h2>
+          <p className="projects-subtitle">
+            A curated collection of recent concept work centered around clean layouts, immersive visuals, and modern interfaces.
+          </p>
         </div>
-        
-        {/* Featured Project */}
-        {featuredProject && (
-          <div className="featured-project" onClick={() => openModal(featuredProject)} style={{ cursor: 'pointer' }}>
-            <div className="featured-image-wrapper">
-              <img 
-                src={featuredProject.image} 
-                alt={featuredProject.title}
-                className="featured-image"
-              />
-              <div className="featured-overlay">
-                <span className="featured-category">{featuredProject.category}</span>
-              </div>
-            </div>
-            <div className="featured-details">
-              <h2 className="featured-title">{featuredProject.title}</h2>
-              <p className="featured-description">{featuredProject.description}</p>
-              <div className="featured-technologies">
-                {featuredProject.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
-                ))}
-              </div>
+
+        <div
+          className="projects-carousel"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <button className="carousel-nav prev" type="button" onClick={goToPrev} aria-label="Previous project">
+            ‹
+          </button>
+
+          <div className="carousel-window">
+            <div className="carousel-track" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+              {projects.map((project) => (
+                <article className="carousel-slide" key={project.title}>
+                  <div className="slide-media">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      loading="lazy"
+                      decoding="async"
+                      onClick={() => setSelectedImage(project.image)}
+                    />
+                  </div>
+
+                  <div className="slide-content">
+                    <p className="slide-label">Featured project</p>
+                    <h3>{project.title}</h3>
+                    <p className="slide-description">{project.description}</p>
+
+                    <div className="tech-list" aria-label="Technologies used">
+                      {project.technologies.map((tech) => (
+                        <span key={tech}>{tech}</span>
+                      ))}
+                    </div>
+
+                    <div className="slide-actions">
+                      {project.liveDemo ? (
+                        <a href={project.liveDemo} target="_blank" rel="noreferrer" className="action-btn primary">
+                          Live Demo
+                        </a>
+                      ) : null}
+                      {project.github ? (
+                        <a href={project.github} target="_blank" rel="noreferrer" className="action-btn secondary">
+                          GitHub
+                        </a>
+                      ) : null}
+                    </div>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
-        )}
 
-        {/* Other Projects Grid */}
-        <div className="projects-gallery">
-          {otherProjects.map((project) => (
-            <div key={project.id} className="project-item" onClick={() => openModal(project)}>
-              <div className="project-image-wrapper">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="project-image"
-                />
-                <div className="project-overlay">
-                  <span className="project-category">{project.category}</span>
-                </div>
-              </div>
-              <div className="project-details">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <div className="project-technologies">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="project-tech-tag">{tech}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <button className="carousel-nav next" type="button" onClick={goToNext} aria-label="Next project">
+            ›
+          </button>
+        </div>
+
+        <div className="carousel-dots" aria-label="Project pagination">
+          {projects.map((project, index) => (
+            <button
+              key={project.title}
+              type="button"
+              className={`dot-button ${index === activeIndex ? 'active' : ''}`}
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Go to ${project.title}`}
+            />
           ))}
         </div>
-
-        {/* Project Modal */}
-        {selectedProject && (
-          <div className="project-modal-overlay" onClick={closeModal}>
-            <div className="project-modal-content" onClick={(e) => e.stopPropagation()}>
-              <button className="modal-close-btn" onClick={closeModal}>×</button>
-              <div className="modal-header">
-                <h2 className="modal-title">{selectedProject.title}</h2>
-                <span className="modal-category">{selectedProject.category}</span>
-              </div>
-              
-              <p className="project-modal-explanation">{selectedProject.description}</p>
-              
-              <div className="modal-body">
-                <div className="modal-text">
-                  {loading ? (
-                    <p>Loading...</p>
-                  ) : (
-                    modalContent
-                      .split('\n\n')
-                      .filter(para => para.trim())
-                      .map((paragraph, idx) => (
-                        <p key={idx} style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>
-                          {paragraph.trim()}
-                        </p>
-                      ))
-                  )}
-                </div>
-              </div>
-              
-              <div className="modal-technologies">
-                <h4 className="modal-tech-title">Technologies Used:</h4>
-                <div className="modal-tech-list">
-                  {selectedProject.technologies && selectedProject.technologies.map((tech, index) => (
-                    <span key={index} className="modal-tech-tag">{tech}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
+
+      {selectedImage && (
+        <div className="image-lightbox" onClick={() => setSelectedImage(null)}>
+          <div className="image-lightbox-content" onClick={(event) => event.stopPropagation()}>
+            <button className="lightbox-close" type="button" onClick={() => setSelectedImage(null)}>
+              ×
+            </button>
+            <img src={selectedImage} alt="Project preview" />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
