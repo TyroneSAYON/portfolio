@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react'
-import './Projects.css'
+import Image from 'next/image'
 
 const projects = [
   {
-    title: 'AtCurbside',
-    description: 'A polished brand-forward experience that highlights the café’s identity through immersive visuals, storytelling, and a modern layout.',
+    title: 'AtCurbside Stickers',
+    description: 'A playful product showcase spotlighting sticker art, campaign visuals, and the creative details behind the brand.',
     technologies: ['Photoshop', 'Illustrator', 'Canva'],
     image: '/exp/curb2.png',
     liveDemo: null,
     github: null
   },
   {
-    title: 'AtCurbside Stickers',
-    description: 'A playful product showcase spotlighting sticker art, campaign visuals, and the creative details behind the brand.',
+    title: 'AtCurbside Visuals',
+    description: 'A polished brand-forward experience that highlights the café’s identity through immersive visuals, storytelling, and a modern layout.',
     technologies: ['React', 'CSS', 'Illustration'],
     image: '/exp/curb1.png',
     liveDemo: null,
@@ -125,11 +125,12 @@ function Projects() {
               {projects.map((project) => (
                 <article className="carousel-slide" key={project.title}>
                   <div className="slide-media">
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
-                      loading="lazy"
-                      decoding="async"
+                      width={900}
+                      height={600}
+                      style={{ objectFit: 'cover', cursor: 'pointer' }}
                       onClick={() => setSelectedImage(project.image)}
                     />
                   </div>
@@ -187,7 +188,7 @@ function Projects() {
             <button className="lightbox-close" type="button" onClick={() => setSelectedImage(null)}>
               ×
             </button>
-            <img src={selectedImage} alt="Project preview" />
+            <Image src={selectedImage} alt="Project preview" width={1200} height={800} style={{ objectFit: 'contain' }} />
           </div>
         </div>
       )}

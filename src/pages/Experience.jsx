@@ -1,5 +1,3 @@
-import '../pages/Pages.css'
-
 function Experience() {
   const experiences = [
     {

@@ -1,4 +1,4 @@
-import './Skills.css'
+import Image from 'next/image'
 
 function Skills() {
   const skills = [
@@ -57,7 +57,7 @@ function Skills() {
       <div className="skills-gallery">
         {skills.map((skill, index) => (
           <div key={index} className="skill-item">
-            <img src={skill.image} alt={skill.title} />
+            <Image src={skill.image} alt={skill.title} width={160} height={160} style={{ objectFit: 'cover' }} />
             <p>{skill.title}</p>
           </div>
         ))}
@@ -73,7 +73,7 @@ function Skills() {
             {designingTools.map((tool, index) => (
               <div key={index} className="tech-item">
                 <div className="tech-icon-wrapper">
-                  <img src={tool.logo} alt={tool.name} />
+                  <Image src={tool.logo} alt={tool.name} width={48} height={48} />
                 </div>
                 <span>{tool.name}</span>
               </div>
@@ -87,7 +87,7 @@ function Skills() {
             {webDevTools.map((tool, index) => (
               <div key={index} className="tech-item">
                 <div className="tech-icon-wrapper">
-                  <img src={tool.logo} alt={tool.name} />
+                  <Image src={tool.logo} alt={tool.name} width={48} height={48} />
                 </div>
                 <span>{tool.name}</span>
               </div>

@@ -1,4 +1,3 @@
-import './Navigation.css'
 import { useState } from 'react'
 
 function Navigation() {

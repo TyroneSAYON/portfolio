@@ -1,5 +1,5 @@
-import './Stories.css'
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 function Stories() {
   const [selectedBlog, setSelectedBlog] = useState(null)
@@ -11,7 +11,7 @@ function Stories() {
     {
       title: 'Internship',
       excerpt: 'A reflective look at how an internship shaped my professional discipline, creative confidence, and curiosity for systems work.',
-      date: 'Feb 10, 2026',
+      date: 'June - Dec 2025',
       readTime: '5 min read',
       category: 'Experience',
       tags: ['DTI', 'IT', 'Internship', 'Growth'],
@@ -55,7 +55,7 @@ function Stories() {
     {
       title: 'Graphic Design',
       excerpt: 'A story about how design evolved from school publication work into real-world branding, art direction, and UI thinking.',
-      date: 'Feb 8, 2026',
+      date: 'June 2019 - Present',
       readTime: '7 min read',
       category: 'Design',
       tags: ['Design', 'UI/UX', 'Branding', 'AtCurbside'],
@@ -95,7 +95,7 @@ function Stories() {
     {
       title: 'Barista Maestro',
       excerpt: 'How leading a café team taught me discipline, mentorship, and how calm systems can create excellent experiences.',
-      date: 'Feb 5, 2026',
+      date: 'Feb 2022 - July 2026',
       readTime: '6 min read',
       category: 'Coffee',
       tags: ['Coffee', 'Leadership', 'Mentoring', 'AtCurbside'],
@@ -135,7 +135,7 @@ function Stories() {
     {
       title: 'Barista',
       excerpt: 'The chapter where balancing work, school, and passion helped me discover resilience, focus, and growth.',
-      date: 'Feb 1, 2026',
+      date: 'July 2022 - July 2026',
       readTime: '4 min read',
       category: 'Lifestyle',
       tags: ['Coffee', 'Barista', 'Working Student', 'Growth'],
@@ -299,10 +299,13 @@ function Stories() {
                           <div className="carousel-track" ref={carouselTrackRef}>
                             {imageList.map((image, idx) => (
                               <div key={`${image}-${idx}`} className="carousel-slide">
-                                <img
+                                <Image
                                   src={image}
                                   alt={`${selectedStory.title} ${idx + 1}`}
                                   className="carousel-image"
+                                  width={800}
+                                  height={600}
+                                  style={{ objectFit: 'cover', cursor: 'pointer' }}
                                   onClick={() => setIsFullscreen(true)}
                                 />
                               </div>
@@ -325,7 +328,7 @@ function Stories() {
                                   className={`thumbnail-btn ${idx === currentImageIndex ? 'active' : ''}`}
                                   onClick={() => setCurrentImageIndex(idx)}
                                 >
-                                  <img src={image} alt={`${selectedStory.title} preview ${idx + 1}`} />
+                                  <Image src={image} alt={`${selectedStory.title} preview ${idx + 1}`} width={120} height={80} style={{ objectFit: 'cover' }} />
                                 </button>
                               ))}
                             </div>
@@ -363,7 +366,7 @@ function Stories() {
                       </div>
                     ) : selectedStory.cover ? (
                       <div className="modal-cover-image">
-                        <img src={selectedStory.cover} alt={selectedStory.title} />
+                        <Image src={selectedStory.cover} alt={selectedStory.title} width={800} height={600} style={{ objectFit: 'cover' }} />
                       </div>
                     ) : null}
                   </div>
@@ -378,7 +381,7 @@ function Stories() {
                 <button className="fullscreen-close" type="button" onClick={() => setIsFullscreen(false)}>
                   ×
                 </button>
-                <img src={currentImage} alt={`${selectedStory.title} fullscreen`} />
+                <Image src={currentImage} alt={`${selectedStory.title} fullscreen`} width={1200} height={900} style={{ objectFit: 'contain' }} />
               </div>
             </div>
           )}

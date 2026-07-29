@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import './Contact.css'
+import Image from 'next/image'
 
 function Contact() {
   const form = useRef();
@@ -29,31 +29,35 @@ function Contact() {
     <>
       <section className="contact-page" id="contact">
         <div className="contact-content">
-          <h1 className="contact-heading">Get In Touch</h1>
-          <p className="contact-subheading">Send me a message and I'll get back to you soon.</p>
-          
-          <form ref={form} className="contact-form" onSubmit={sendEmail}>
-            <div className="form-group">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Your Name"
-                className="form-input"
-              />
+          <div className="contact-panel">
+            <div className="contact-header">
+              <p className="contact-label">Contact</p>
+              <h1 className="contact-heading">Let's work together</h1>
+              <p className="contact-subheading">Share your project details and I’ll get back to you with a creative response.</p>
             </div>
 
-            <div className="form-group">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="your@email.com"
-                className="form-input"
-              />
-            </div>
+            <form ref={form} className="contact-form" onSubmit={sendEmail}>
+              <div className="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your Name"
+                  className="form-input"
+                />
+              </div>
+
+              <div className="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="your@email.com"
+                  className="form-input"
+                />
+              </div>
 
             <div className="form-group">
               <textarea
@@ -68,6 +72,7 @@ function Contact() {
             <button type="submit" className="submit-button">Send Message</button>
           </form>
         </div>
+      </div>
       </section>
 
       <footer className="minimal-footer">
@@ -76,16 +81,16 @@ function Contact() {
             <p className="footer-text">Tyrone Sayon</p>
             <div className="footer-socials">
               <a href="https://linkedin.com/in/yourprofile" className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <img src="/iconlogo/linkedin.png" alt="LinkedIn" />
+                <Image src="/iconlogo/linkedin.png" alt="LinkedIn" width={24} height={24} />
               </a>
               <a href="mailto:your.email@gmail.com" className="social-icon" aria-label="Gmail">
-                <img src="/iconlogo/gmail.png" alt="Gmail" />
+                <Image src="/iconlogo/gmail.png" alt="Gmail" width={24} height={24} />
               </a>
               <a href="https://github.com/yourprofile" className="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-                <img src="/iconlogo/github.png" alt="GitHub" />
+                <Image src="/iconlogo/github.png" alt="GitHub" width={24} height={24} />
               </a>
               <a href="https://behance.net/yourprofile" className="social-icon" aria-label="Behance" target="_blank" rel="noopener noreferrer">
-                <img src="/iconlogo/behance.png" alt="Behance" />
+                <Image src="/iconlogo/behance.png" alt="Behance" width={24} height={24} />
               </a>
             </div>
           </div>

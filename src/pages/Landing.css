@@ -21,7 +21,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 6rem;
-  padding-top: 0;
+  padding-top: 6rem;
 }
 
 .hero-content {

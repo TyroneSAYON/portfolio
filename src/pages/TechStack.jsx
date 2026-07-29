@@ -1,5 +1,3 @@
-import '../pages/Pages.css'
-
 function TechStack() {
   const technologies = [
     { name: 'React', category: 'Frontend' },

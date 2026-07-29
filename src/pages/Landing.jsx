@@ -1,4 +1,4 @@
-import './Landing.css'
+import Image from 'next/image'
 
 function Landing() {
   return (
@@ -15,16 +15,16 @@ function Landing() {
           
           <div className="social-links">
             <a href="https://www.linkedin.com/in/tyrone-sayon/" className="social-icon linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <img src="/iconlogo/linkedin.png" alt="LinkedIn" />
+              <Image src="/iconlogo/linkedin.png" alt="LinkedIn" width={24} height={24} />
             </a>
             <a href="mailto:tyronesayon917@gmail.com" className="social-icon gmail" aria-label="Gmail">
-              <img src="/iconlogo/gmail.png" alt="Gmail" />
+              <Image src="/iconlogo/gmail.png" alt="Gmail" width={24} height={24} />
             </a>
             <a href="https://github.com/TyroneSAYON" className="social-icon github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-              <img src="/iconlogo/github.png" alt="GitHub" />
+              <Image src="/iconlogo/github.png" alt="GitHub" width={24} height={24} />
             </a>
             <a href="https://www.behance.net/tyronesayon" className="social-icon behance" aria-label="Behance" target="_blank" rel="noopener noreferrer">
-              <img src="/iconlogo/behance.png" alt="Behance" />
+              <Image src="/iconlogo/behance.png" alt="Behance" width={24} height={24} />
             </a>
           </div>
 
@@ -35,7 +35,7 @@ function Landing() {
           <div className="image-container">
             <div className="image-bg-circle"></div>
             <div className="image-bg-square"></div>
-            <img src="/profilepic.png" alt="Tyrone Sayon" className="profile-pic" />
+            <Image src="/profilepic.png" alt="Tyrone Sayon" className="profile-pic" width={360} height={360} style={{ objectFit: 'cover' }} />
           </div>
         </div>
       </div>

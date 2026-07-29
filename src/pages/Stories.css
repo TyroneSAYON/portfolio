@@ -610,11 +610,36 @@
 
 @media (max-width: 640px) {
   .page-section {
-    padding: 3rem 1rem 4rem;
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .blog-card {
+    padding: 1.25rem 1.2rem;
+  }
+
+  .blog-title {
+    font-size: 1.35rem;
+  }
+
+  .blog-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .blog-footer {
+    justify-content: flex-start;
   }
 
   .blog-modal-overlay {
-    padding: 0.75rem;
+    padding: 0.65rem;
+  }
+
+  .blog-modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: 97vh;
+    border-radius: 22px;
+    overflow: hidden;
   }
 
   .modal-content {
@@ -624,28 +649,90 @@
   }
 
   .modal-layout {
+    display: block;
+    gap: 1rem;
     height: auto;
+  }
+
+  .modal-left,
+  .modal-right {
+    width: 100%;
+    max-width: 100%;
+    position: static;
+  }
+
+  .modal-right {
+    margin-top: 1rem;
   }
 
   .info-card-row {
     grid-template-columns: 1fr;
   }
 
+  .story-scroll-area {
+    max-height: none;
+    padding-right: 0;
+  }
+
+  .story-section,
+  .timeline-block {
+    padding: 0.95rem 1rem;
+  }
+
   .thumbnail-row {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .carousel-container {
+    width: 100%;
+    min-height: 220px;
   }
 
   .carousel-wrapper {
     min-height: 220px;
     max-height: none;
+    width: 100%;
+  }
+
+  .carousel-track {
+    min-height: 220px;
+  }
+
+  .carousel-slide {
+    min-height: 220px;
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .carousel-controls {
     gap: 0.35rem;
+    flex-wrap: wrap;
   }
 
   .carousel-btn {
     width: 32px;
     height: 32px;
+  }
+
+  .carousel-dots {
+    justify-content: flex-start;
+  }
+
+  .modal-tags {
+    justify-content: flex-start;
+  }
+
+  .modal-header,
+  .modal-meta,
+  .modal-lead {
+    margin-bottom: 0.85rem;
+  }
+
+  .modal-title {
+    font-size: 1.8rem;
   }
 }

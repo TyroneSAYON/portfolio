@@ -129,8 +129,8 @@
 }
 
 .tech-item {
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: transparent;
+  border: none;
   border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
@@ -138,9 +138,9 @@
 }
 
 .tech-item:hover {
-  background: rgba(0, 212, 255, 0.2);
+  background: transparent;
   transform: scale(1.05);
-  border-color: #646cff;
+  border: none;
 }
 
 .tech-item h4 {
