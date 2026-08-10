@@ -1,1 +1,6 @@
-{"/_app":"pages/_app.js","/Contact":"pages/Contact.html","/_error":"pages/_error.js","/Experience":"pages/Experience.html","/Landing":"pages/Landing.html","/Projects":"pages/Projects.html","/Skills":"pages/Skills.html","/Stories":"pages/Stories.html","/":"pages/index.html","/TechStack":"pages/TechStack.html","/_document":"pages/_document.js","/404":"pages/404.html"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js"
+}
